@@ -80,16 +80,16 @@ def register():
             # insert into database
             db.execute("INSERT INTO registrants (email, username, hash) VALUES(?,?,?)", email, username, hash)
 
-#             email = request.form.get("email")
-#             username = request.form.get("username").lower().strip()
-#             password = request.form.get("password")
-#             confirmation = request.form.get("confirmation")
+            email = request.form.get("email")
+            username = request.form.get("username").lower().strip()
+            password = request.form.get("password")
+            confirmation = request.form.get("confirmation")
 
-#             message = Message("David From Shoppingcomplex.com", recipients=[email])
-#             message.body = render_template("email.html")
-#             row = db.execute("SELECT * FROM 'registrants' WHERE email = (?)", email)
-#             message.html = render_template("email.html", username=username, row=row)
-#             mail.send(message)
+            message = Message("David From Shoppingcomplex.com", recipients=[email])
+            message.body = render_template("email.html")
+            row = db.execute("SELECT * FROM 'registrants' WHERE email = (?)", email)
+            message.html = render_template("email.html", username=username, row=row)
+            mail.send(message)
 
             flash("Account created successfully", category="error")
             return redirect("/login")
