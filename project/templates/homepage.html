@@ -14,7 +14,7 @@
           <div class="image"><img src="static/{{ product.img }}" alt="uo no"></div>
               
           <div class="text">{{ product.title }} </div>
-          <div class="product_price">N{{ product.price }}</div> {{ product.wallet }}
+          <div class="product_price">₦ {{ product.price }}</div> {{ product.wallet }}
 
           <form action="/product" method="post" class="form">
               <input type="hidden" name="id" value="{{ product.id }}">
